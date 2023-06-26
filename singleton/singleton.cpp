@@ -7,8 +7,6 @@ void DoWork(const T& handle) {
 
 class Manager1
 {
-  Manager1(){
-  }
 public:
   static Manager1& Instance() {
     static Manager1 manager;
@@ -25,7 +23,7 @@ public:
 class Manager2
 {
   std::unique_ptr<int> resource_;
-  Manager2(): resource_{new int{42}}
+  Manager2(): resource_{new int{42}}{}
 public:
   static Manager2& Instance() {
     static Manager2 manager;
