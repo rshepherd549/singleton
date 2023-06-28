@@ -71,9 +71,9 @@ Even if we now checked for it on calls, the singleton had already been created a
 # Fixes
 
 - for each use: check `IsValid` and `ReInit`
-- repeated creation with manual flag and mutex
+- repeated creation with manual use of `call_once` flag and mutex
 - some more complex static which included constructing another static capturing the resource
-- nothing that had the reliability, portability or elegance of static
+- nothing that had the reliability, portability or elegance of `static`
 
 ---
 
@@ -125,6 +125,5 @@ which forces the change of the overall API
 # Takeaways
 
 - Successful construction of an object doesn't mean it's useable
+- Review what you *know* about c++'s mechanisms
 - Don't forget exceptions as part of the constructor/destructor toolkit
-- 
-
